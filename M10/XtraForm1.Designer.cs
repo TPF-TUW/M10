@@ -54,13 +54,14 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txeSizeName = new DevExpress.XtraEditors.TextEdit();
+            this.txeSizeNo = new DevExpress.XtraEditors.TextEdit();
             this.lblStatus = new DevExpress.XtraEditors.LabelControl();
             this.txeDATE = new DevExpress.XtraEditors.TextEdit();
             this.txeCREATE = new DevExpress.XtraEditors.TextEdit();
             this.txeID = new DevExpress.XtraEditors.TextEdit();
-            this.gcGarment = new DevExpress.XtraGrid.GridControl();
-            this.gvGarment = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcSize = new DevExpress.XtraGrid.GridControl();
+            this.gvSize = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -71,17 +72,17 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeSizeName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeSizeNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcGarment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvGarment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -92,7 +93,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +188,7 @@
             this.bbiSave.Id = 21;
             this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
             this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -217,6 +218,7 @@
             this.bbiExcel.Id = 26;
             this.bbiExcel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiExcel.ImageOptions.SvgImage")));
             this.bbiExcel.Name = "bbiExcel";
+            this.bbiExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExcel_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -291,13 +293,13 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.txeSizeName);
+            this.layoutControl1.Controls.Add(this.txeSizeNo);
             this.layoutControl1.Controls.Add(this.lblStatus);
             this.layoutControl1.Controls.Add(this.txeDATE);
             this.layoutControl1.Controls.Add(this.txeCREATE);
             this.layoutControl1.Controls.Add(this.txeID);
-            this.layoutControl1.Controls.Add(this.gcGarment);
+            this.layoutControl1.Controls.Add(this.gcSize);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 160);
             this.layoutControl1.Name = "layoutControl1";
@@ -307,16 +309,30 @@
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // textEdit1
+            // txeSizeName
             // 
-            this.textEdit1.EditValue = "ZZZZZZZZZZ";
-            this.textEdit1.Location = new System.Drawing.Point(80, 28);
-            this.textEdit1.MenuManager = this.ribbonControl;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.MaxLength = 10;
-            this.textEdit1.Size = new System.Drawing.Size(258, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 12;
+            this.txeSizeName.Location = new System.Drawing.Point(80, 52);
+            this.txeSizeName.MenuManager = this.ribbonControl;
+            this.txeSizeName.Name = "txeSizeName";
+            this.txeSizeName.Properties.MaxLength = 50;
+            this.txeSizeName.Size = new System.Drawing.Size(258, 20);
+            this.txeSizeName.StyleController = this.layoutControl1;
+            this.txeSizeName.TabIndex = 17;
+            this.txeSizeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeSizeName_KeyDown);
+            this.txeSizeName.LostFocus += new System.EventHandler(this.txeSizeName_LostFocus);
+            // 
+            // txeSizeNo
+            // 
+            this.txeSizeNo.EditValue = "";
+            this.txeSizeNo.Location = new System.Drawing.Point(80, 28);
+            this.txeSizeNo.MenuManager = this.ribbonControl;
+            this.txeSizeNo.Name = "txeSizeNo";
+            this.txeSizeNo.Properties.MaxLength = 10;
+            this.txeSizeNo.Size = new System.Drawing.Size(258, 20);
+            this.txeSizeNo.StyleController = this.layoutControl1;
+            this.txeSizeNo.TabIndex = 12;
+            this.txeSizeNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeSizeNo_KeyDown);
+            this.txeSizeNo.LostFocus += new System.EventHandler(this.txeSizeNo_LostFocus);
             // 
             // lblStatus
             // 
@@ -359,26 +375,27 @@
             this.txeID.StyleController = this.layoutControl1;
             this.txeID.TabIndex = 5;
             // 
-            // gcGarment
+            // gcSize
             // 
-            this.gcGarment.Location = new System.Drawing.Point(347, 30);
-            this.gcGarment.MainView = this.gvGarment;
-            this.gcGarment.MenuManager = this.ribbonControl;
-            this.gcGarment.Name = "gcGarment";
-            this.gcGarment.Size = new System.Drawing.Size(638, 363);
-            this.gcGarment.TabIndex = 4;
-            this.gcGarment.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvGarment});
+            this.gcSize.Location = new System.Drawing.Point(347, 30);
+            this.gcSize.MainView = this.gvSize;
+            this.gcSize.MenuManager = this.ribbonControl;
+            this.gcSize.Name = "gcSize";
+            this.gcSize.Size = new System.Drawing.Size(638, 363);
+            this.gcSize.TabIndex = 4;
+            this.gcSize.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvSize});
             // 
-            // gvGarment
+            // gvSize
             // 
-            this.gvGarment.DetailHeight = 377;
-            this.gvGarment.GridControl = this.gcGarment;
-            this.gvGarment.Name = "gvGarment";
-            this.gvGarment.OptionsBehavior.Editable = false;
-            this.gvGarment.OptionsBehavior.ReadOnly = true;
-            this.gvGarment.OptionsView.ShowGroupPanel = false;
-            this.gvGarment.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvGarment_RowCellClick);
+            this.gvSize.DetailHeight = 377;
+            this.gvSize.GridControl = this.gcSize;
+            this.gvSize.Name = "gvSize";
+            this.gvSize.OptionsBehavior.Editable = false;
+            this.gvSize.OptionsBehavior.ReadOnly = true;
+            this.gvSize.OptionsView.ShowGroupPanel = false;
+            this.gvSize.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvGarment_RowCellClick);
+            this.gvSize.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvSize_RowStyle);
             // 
             // Root
             // 
@@ -411,7 +428,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gcGarment;
+            this.layoutControlItem1.Control = this.gcSize;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(642, 367);
@@ -472,26 +489,16 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textEdit1;
+            this.layoutControlItem3.Control = this.txeSizeNo;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(338, 24);
             this.layoutControlItem3.Text = "Size No.";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 14);
             // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(80, 52);
-            this.textEdit2.MenuManager = this.ribbonControl;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.MaxLength = 50;
-            this.textEdit2.Size = new System.Drawing.Size(258, 20);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 17;
-            // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.textEdit2;
+            this.layoutControlItem11.Control = this.txeSizeName;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(338, 24);
@@ -515,12 +522,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeSizeName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txeSizeNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeDATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeCREATE.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txeID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcGarment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvGarment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -531,7 +539,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -565,8 +572,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraEditors.TextEdit txeID;
-        private DevExpress.XtraGrid.GridControl gcGarment;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvGarment;
+        private DevExpress.XtraGrid.GridControl gcSize;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvSize;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -578,9 +585,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.LabelControl lblStatus;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txeSizeNo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txeSizeName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }
