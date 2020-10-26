@@ -72,12 +72,12 @@ namespace M10
         {
             lblStatus.Text = "* Edit Size";
             lblStatus.ForeColor = Color.Red;
-            txeID.EditValue = gvSize.GetFocusedRowCellValue("No").ToString();
-            txeSizeNo.EditValue = gvSize.GetFocusedRowCellValue("SizeNo").ToString();
-            txeSizeName.EditValue = gvSize.GetFocusedRowCellValue("SizeName").ToString();
+            txeID.Text = gvSize.GetFocusedRowCellValue("No").ToString();
+            txeSizeNo.Text = gvSize.GetFocusedRowCellValue("SizeNo").ToString();
+            txeSizeName.Text = gvSize.GetFocusedRowCellValue("SizeName").ToString();
 
-            txeCREATE.EditValue = gvSize.GetFocusedRowCellValue("CreatedBy").ToString();
-            txeDATE.EditValue = gvSize.GetFocusedRowCellValue("CreatedDate").ToString();
+            txeCREATE.Text = gvSize.GetFocusedRowCellValue("CreatedBy").ToString();
+            txeDATE.Text = gvSize.GetFocusedRowCellValue("CreatedDate").ToString();
         }
 
         private void txeSizeNo_KeyDown(object sender, KeyEventArgs e)
