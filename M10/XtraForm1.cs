@@ -229,18 +229,29 @@ namespace M10
                         strCREATE = txeCREATE.Text.Trim();
                     }
 
+                    if (lblStatus.Text == "* Add Size")
+                    {
+                        sbSQL.Append("  INSERT INTO ProductSize(SizeNo, SizeName, CreatedBy, CreatedDate) ");
+                        sbSQL.Append("  VALUES(N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', N'" + txeSizeName.Text.Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
+                    }
+                    else if (lblStatus.Text == "* Edit Size")
+                    {
+                        sbSQL.Append("  UPDATE ProductSize SET ");
+                        sbSQL.Append("      SizeNo = N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', SizeName = N'" + txeSizeName.Text.Trim().Replace("'", "''") + "' ");
+                        sbSQL.Append("  WHERE (OIDSIZE = '" + txeID.Text.Trim() + "') ");
+                    }
 
-                    sbSQL.Append("IF NOT EXISTS(SELECT OIDSIZE FROM ProductSize WHERE OIDSIZE = '" + txeID.Text.Trim() + "') ");
-                    sbSQL.Append(" BEGIN ");
-                    sbSQL.Append("  INSERT INTO ProductSize(SizeNo, SizeName, CreatedBy, CreatedDate) ");
-                    sbSQL.Append("  VALUES(N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', N'" + txeSizeName.Text.Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
-                    sbSQL.Append(" END ");
-                    sbSQL.Append("ELSE ");
-                    sbSQL.Append(" BEGIN ");
-                    sbSQL.Append("  UPDATE ProductSize SET ");
-                    sbSQL.Append("      SizeNo = N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', SizeName = N'" + txeSizeName.Text.Trim().Replace("'", "''") + "' ");
-                    sbSQL.Append("  WHERE (OIDSIZE = '" + txeID.Text.Trim() + "') ");
-                    sbSQL.Append(" END ");
+                    //sbSQL.Append("IF NOT EXISTS(SELECT OIDSIZE FROM ProductSize WHERE OIDSIZE = '" + txeID.Text.Trim() + "') ");
+                    //sbSQL.Append(" BEGIN ");
+                    //sbSQL.Append("  INSERT INTO ProductSize(SizeNo, SizeName, CreatedBy, CreatedDate) ");
+                    //sbSQL.Append("  VALUES(N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', N'" + txeSizeName.Text.Trim().Replace("'", "''") + "', '" + strCREATE + "', GETDATE()) ");
+                    //sbSQL.Append(" END ");
+                    //sbSQL.Append("ELSE ");
+                    //sbSQL.Append(" BEGIN ");
+                    //sbSQL.Append("  UPDATE ProductSize SET ");
+                    //sbSQL.Append("      SizeNo = N'" + txeSizeNo.Text.Trim().Replace("'", "''") + "', SizeName = N'" + txeSizeName.Text.Trim().Replace("'", "''") + "' ");
+                    //sbSQL.Append("  WHERE (OIDSIZE = '" + txeID.Text.Trim() + "') ");
+                    //sbSQL.Append(" END ");
                     //MessageBox.Show(sbSQL.ToString());
                     if (sbSQL.Length > 0)
                     {
