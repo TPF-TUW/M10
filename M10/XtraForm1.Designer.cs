@@ -393,6 +393,8 @@
             this.gvSize.Name = "gvSize";
             this.gvSize.OptionsBehavior.Editable = false;
             this.gvSize.OptionsBehavior.ReadOnly = true;
+            this.gvSize.OptionsView.EnableAppearanceEvenRow = true;
+            this.gvSize.OptionsView.EnableAppearanceOddRow = true;
             this.gvSize.OptionsView.ShowGroupPanel = false;
             this.gvSize.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gvGarment_RowCellClick);
             this.gvSize.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvSize_RowStyle);
