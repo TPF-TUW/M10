@@ -70,14 +70,7 @@ namespace M10
 
         private void gvGarment_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            lblStatus.Text = "* Edit Size";
-            lblStatus.ForeColor = Color.Red;
-            txeID.Text = gvSize.GetFocusedRowCellValue("No").ToString();
-            txeSizeNo.Text = gvSize.GetFocusedRowCellValue("SizeNo").ToString();
-            txeSizeName.Text = gvSize.GetFocusedRowCellValue("SizeName").ToString();
-
-            txeCREATE.Text = gvSize.GetFocusedRowCellValue("CreatedBy").ToString();
-            txeDATE.Text = gvSize.GetFocusedRowCellValue("CreatedDate").ToString();
+            
         }
 
         private void txeSizeNo_KeyDown(object sender, KeyEventArgs e)
@@ -267,6 +260,18 @@ namespace M10
             {
                 txeSizeNo.Focus();
             }
+        }
+
+        private void gvSize_RowClick(object sender, RowClickEventArgs e)
+        {
+            lblStatus.Text = "* Edit Size";
+            lblStatus.ForeColor = Color.Red;
+            txeID.Text = gvSize.GetFocusedRowCellValue("No").ToString();
+            txeSizeNo.Text = gvSize.GetFocusedRowCellValue("SizeNo").ToString();
+            txeSizeName.Text = gvSize.GetFocusedRowCellValue("SizeName").ToString();
+
+            txeCREATE.Text = gvSize.GetFocusedRowCellValue("CreatedBy").ToString();
+            txeDATE.Text = gvSize.GetFocusedRowCellValue("CreatedDate").ToString();
         }
     }
 }
