@@ -135,6 +135,7 @@
             this.bbiPrintPreview.Id = 14;
             this.bbiPrintPreview.ImageOptions.ImageUri.Uri = "Preview";
             this.bbiPrintPreview.Name = "bbiPrintPreview";
+            this.bbiPrintPreview.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrintPreview_ItemClick);
             // 
             // bsiRecordsCount
             // 
@@ -181,6 +182,7 @@
             this.bbiPrint.Id = 20;
             this.bbiPrint.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiPrint.ImageOptions.SvgImage")));
             this.bbiPrint.Name = "bbiPrint";
+            this.bbiPrint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrint_ItemClick);
             // 
             // bbiSave
             // 
@@ -311,11 +313,11 @@
             // 
             // txeSizeName
             // 
-            this.txeSizeName.Location = new System.Drawing.Point(80, 52);
+            this.txeSizeName.Location = new System.Drawing.Point(89, 52);
             this.txeSizeName.MenuManager = this.ribbonControl;
             this.txeSizeName.Name = "txeSizeName";
             this.txeSizeName.Properties.MaxLength = 50;
-            this.txeSizeName.Size = new System.Drawing.Size(258, 20);
+            this.txeSizeName.Size = new System.Drawing.Size(249, 20);
             this.txeSizeName.StyleController = this.layoutControl1;
             this.txeSizeName.TabIndex = 17;
             this.txeSizeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeSizeName_KeyDown);
@@ -324,11 +326,11 @@
             // txeSizeNo
             // 
             this.txeSizeNo.EditValue = "";
-            this.txeSizeNo.Location = new System.Drawing.Point(80, 28);
+            this.txeSizeNo.Location = new System.Drawing.Point(89, 28);
             this.txeSizeNo.MenuManager = this.ribbonControl;
             this.txeSizeNo.Name = "txeSizeNo";
             this.txeSizeNo.Properties.MaxLength = 10;
-            this.txeSizeNo.Size = new System.Drawing.Size(258, 20);
+            this.txeSizeNo.Size = new System.Drawing.Size(249, 20);
             this.txeSizeNo.StyleController = this.layoutControl1;
             this.txeSizeNo.TabIndex = 12;
             this.txeSizeNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeSizeNo_KeyDown);
@@ -347,31 +349,31 @@
             // 
             // txeDATE
             // 
-            this.txeDATE.Location = new System.Drawing.Point(80, 378);
+            this.txeDATE.Location = new System.Drawing.Point(89, 378);
             this.txeDATE.MenuManager = this.ribbonControl;
             this.txeDATE.Name = "txeDATE";
             this.txeDATE.Properties.ReadOnly = true;
-            this.txeDATE.Size = new System.Drawing.Size(258, 20);
+            this.txeDATE.Size = new System.Drawing.Size(249, 20);
             this.txeDATE.StyleController = this.layoutControl1;
             this.txeDATE.TabIndex = 9;
             // 
             // txeCREATE
             // 
-            this.txeCREATE.Location = new System.Drawing.Point(80, 354);
+            this.txeCREATE.Location = new System.Drawing.Point(89, 354);
             this.txeCREATE.MenuManager = this.ribbonControl;
             this.txeCREATE.Name = "txeCREATE";
             this.txeCREATE.Properties.ReadOnly = true;
-            this.txeCREATE.Size = new System.Drawing.Size(258, 20);
+            this.txeCREATE.Size = new System.Drawing.Size(249, 20);
             this.txeCREATE.StyleController = this.layoutControl1;
             this.txeCREATE.TabIndex = 8;
             // 
             // txeID
             // 
-            this.txeID.Location = new System.Drawing.Point(80, 4);
+            this.txeID.Location = new System.Drawing.Point(89, 4);
             this.txeID.MenuManager = this.ribbonControl;
             this.txeID.Name = "txeID";
             this.txeID.Properties.ReadOnly = true;
-            this.txeID.Size = new System.Drawing.Size(169, 20);
+            this.txeID.Size = new System.Drawing.Size(160, 20);
             this.txeID.StyleController = this.layoutControl1;
             this.txeID.TabIndex = 5;
             // 

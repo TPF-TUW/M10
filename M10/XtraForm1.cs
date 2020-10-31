@@ -273,5 +273,15 @@ namespace M10
             txeCREATE.Text = gvSize.GetFocusedRowCellValue("CreatedBy").ToString();
             txeDATE.Text = gvSize.GetFocusedRowCellValue("CreatedDate").ToString();
         }
+
+        private void bbiPrintPreview_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcSize.ShowPrintPreview();
+        }
+
+        private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gcSize.Print();
+        }
     }
 }
