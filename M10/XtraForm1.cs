@@ -250,6 +250,7 @@ namespace M10
 
         private void gvSize_RowClick(object sender, RowClickEventArgs e)
         {
+            if (gvSize.IsFilterRow(e.RowHandle)) return;
             lblStatus.Text = "* Edit Size";
             lblStatus.ForeColor = Color.Red;
             txeID.Text = gvSize.GetFocusedRowCellValue("No").ToString();
