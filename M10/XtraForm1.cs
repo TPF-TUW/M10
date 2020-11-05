@@ -85,20 +85,26 @@ namespace M10
         {
             txeSizeNo.Text = txeSizeNo.Text.ToUpper().Trim();
             bool chkDup = chkDuplicateNo();
-            if (chkDup == false)
+            if (chkDup == true)
             {
                 txeSizeName.Focus();
+            }
+            else
+            {
+                FUNC.msgWarning("Duplicate size no. !! Please Change.");
+                txeSizeNo.Text = "";
+                txeSizeNo.Focus();
             }
         }
 
         private void txeSizeName_LostFocus(object sender, EventArgs e)
         {
             txeSizeName.Text = txeSizeName.Text.ToUpper().Trim();
-            bool chkDup = chkDuplicateName();
-            if (chkDup == false)
-            {
-                txeSizeNo.Focus();
-            }
+            //bool chkDup = chkDuplicateName();
+            //if (chkDup == false)
+            //{
+            //    txeSizeNo.Focus();
+            //}
         }
 
         private bool chkDuplicateNo()
@@ -113,8 +119,6 @@ namespace M10
                     sbSQL.Append("SELECT TOP(1) SizeNo FROM ProductSize WHERE (SizeNo = N'" + txeSizeNo.Text.Trim() + "') ");
                     if (new DBQuery(sbSQL).getString() != "")
                     {
-                        FUNC.msgWarning("Duplicate size no. !! Please Change.");
-                        txeSizeNo.Text = "";
                         chkDup = false;
                     }
                 }
@@ -127,8 +131,6 @@ namespace M10
                     string strCHK = new DBQuery(sbSQL).getString();
                     if (strCHK != "" && strCHK != txeID.Text.Trim())
                     {
-                        FUNC.msgWarning("Duplicate size no. !! Please Change.");
-                        txeSizeNo.Text = "";
                         chkDup = false;
                     }
                 }
