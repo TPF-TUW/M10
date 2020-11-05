@@ -321,6 +321,7 @@
             this.txeSizeName.StyleController = this.layoutControl1;
             this.txeSizeName.TabIndex = 17;
             this.txeSizeName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeSizeName_KeyDown);
+            this.txeSizeName.Leave += new System.EventHandler(this.txeSizeName_Leave);
             this.txeSizeName.LostFocus += new System.EventHandler(this.txeSizeName_LostFocus);
             // 
             // txeSizeNo
@@ -334,6 +335,7 @@
             this.txeSizeNo.StyleController = this.layoutControl1;
             this.txeSizeNo.TabIndex = 12;
             this.txeSizeNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txeSizeNo_KeyDown);
+            this.txeSizeNo.Leave += new System.EventHandler(this.txeSizeNo_Leave);
             this.txeSizeNo.LostFocus += new System.EventHandler(this.txeSizeNo_LostFocus);
             // 
             // lblStatus

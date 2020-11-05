@@ -83,28 +83,12 @@ namespace M10
 
         private void txeSizeNo_LostFocus(object sender, EventArgs e)
         {
-            txeSizeNo.Text = txeSizeNo.Text.ToUpper().Trim();
-            bool chkDup = chkDuplicateNo();
-            if (chkDup == true)
-            {
-                txeSizeName.Focus();
-            }
-            else
-            {
-                FUNC.msgWarning("Duplicate size no. !! Please Change.");
-                txeSizeNo.Text = "";
-                txeSizeNo.Focus();
-            }
+            
         }
 
         private void txeSizeName_LostFocus(object sender, EventArgs e)
         {
-            txeSizeName.Text = txeSizeName.Text.ToUpper().Trim();
-            //bool chkDup = chkDuplicateName();
-            //if (chkDup == false)
-            //{
-            //    txeSizeNo.Focus();
-            //}
+
         }
 
         private bool chkDuplicateNo()
@@ -284,6 +268,28 @@ namespace M10
         private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             gcSize.Print();
+        }
+
+        private void txeSizeNo_Leave(object sender, EventArgs e)
+        {
+            txeSizeNo.Text = txeSizeNo.Text.ToUpper().Trim();
+            bool chkDup = chkDuplicateNo();
+            if (chkDup == true)
+            {
+                txeSizeName.Focus();
+            }
+            else
+            {
+                txeSizeNo.Text = "";
+                txeSizeNo.Focus();
+                FUNC.msgWarning("Duplicate size no. !! Please Change.");
+                
+            }
+        }
+
+        private void txeSizeName_Leave(object sender, EventArgs e)
+        {
+            txeSizeName.Text = txeSizeName.Text.ToUpper().Trim();
         }
     }
 }
